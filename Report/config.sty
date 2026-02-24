@@ -1,0 +1,27 @@
+\ProvidesPackage{config}
+
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage[backend=biber]{biblatex}
+\usepackage{float}
+\usepackage{tocloft}
+\usepackage[norule]{footmisc}
+\usepackage{textcomp}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+
+\DeclareLanguageMapping{spanish}{spanish-apa}
+\geometry{top=1.8cm,bottom=1.8cm,left=1.8cm,right=1.8cm,headheight=45pt, headsep=0.2cm}
+\addbibresource{referencias.bib}
+
+\titleformat{\chapter}[block]
+{\normalfont\bfseries\MakeUppercase}{}{}{\huge}
+\titlespacing{\chapter}{-0.5pt}{-0.3\baselineskip}{1\baselineskip}

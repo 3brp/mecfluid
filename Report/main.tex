@@ -1,69 +1,14 @@
 \documentclass[12pt,a4paper]{report}
-
-
-\usepackage[spanish,es-noshorthands]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage{geometry}
-\usepackage{amsmath}
-\usepackage[hidelinks]{hyperref}
-\usepackage{titlesec}
-\usepackage{fancyhdr}
-\usepackage{newtxtext,newtxmath}
-\usepackage{setspace}
-\usepackage{graphicx}
-\usepackage[backend=biber]{biblatex}
-\usepackage{float}
-\usepackage{tocloft}
-\usepackage[norule]{footmisc}
-\usepackage{textcomp}
-
-\DeclareLanguageMapping{spanish}{spanish-apa}
-\geometry{top=1.8cm,bottom=2cm,left=2cm,right=2cm,headheight=48pt, headsep=-0.5cm}
-\addbibresource{referencias.bib}
-
-
-\pagestyle{fancy}
-\fancyhf{}
-\fancyfoot[R]{\thepage}
-\fancyhead[L]{}  
-\fancyhead[R]{}  
-\pagenumbering{arabic}
-\setlength\parindent{0pt}
-\renewcommand{\headrulewidth}{0pt}
-
-\newcommand{\nombreEstudiantes}{
-	Marcos Bernabé Pomar\\
-	Xiang Li\\
-	Lina Ni\\
-	Miguel Ángel Fuentes Parra\\
-	Oscar Corts Carbajal\\
-	Carlos Palencia Martínez\\
-	Olivia Frisuelos Grzybowska
-	}
-	
+\usepackage{config}
 
 \begin{document}
+	\input{titlepage}
+
+	\clearpage
+	\thispagestyle{empty}
 	
-	\begin{titlepage}
-		\noindent
-		\begin{minipage}{.05\linewidth}
-			\includegraphics[height=2.3cm]{IMAGENES/marca_UPV_principal_negro300.png}
-		\end{minipage}
-		\hskip5.3cm
-		\begin{minipage}{.65\linewidth}
-			\begin{flushright}
-				\renewcommand\baselinestretch{1}{
-					\large{ETSIADI}\\
-					\large {Mecánica de Fluidos}}\\
-			\end{flushright}
-		\end{minipage}%
+	\tableofcontents
 	
-		\centering
-		\vspace{3cm}
-		{\Huge \textbf{Trabajo Mecánica de Fluidos}\par}
-		\vspace{1cm}
-		
-		\nombreEstudiantes\par
-		
-	\end{titlepage}
+	\chapter*{Cálculos e investigación}
+	\input{investigation.tex}
 \end{document}
