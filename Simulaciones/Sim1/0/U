@@ -1,0 +1,55 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    object      U;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 1 -1 0 0 0 0];
+
+internalField   uniform (0 0 0);
+
+boundaryField
+{
+    wallz
+    {
+        type            noSlip;
+    }
+    inlet1
+    {
+        type            flowRateInletVelocity;
+        massFlowRate    0.5;          // Pon aquí tu flujo másico real en [kg/s]
+        rhoInlet        1000;         // Densidad del agua (fase que entra)
+        value           uniform (0 -0.3 0); // Valor inicial de respaldo
+    }
+
+    outlet1
+    {
+        type            pressureInletOutletVelocity;
+        value           uniform (0 0 0);
+
+    }
+
+    atmosphere
+    {
+        type            pressureInletOutletVelocity;
+        value           uniform (0 0 0);
+    }
+
+    FrontBackPlanes
+    {
+        type            symmetry;
+    }
+}
+
+
+// ************************************************************************* //
